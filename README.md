@@ -94,3 +94,5 @@ No backend or database integration has been implemented yet.
 
 This project was designed and developed as a client-based freelance solution for Lourdes Mata Central School, focusing on usability, modern UI, and efficient receipt management.
 ---
+## 🔗 SceenShots
+* login.html.page 
