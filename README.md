@@ -88,9 +88,9 @@ No backend or database integration has been implemented yet.
 ---
 ## 👩‍💻 Developer
 
-Developed by: Reshma R S
-Role: Freelance Front-End Developer
-Project Type: Independent Freelance Work
+* Developed by: Reshma R S
+* Role: Freelance Front-End Developer
+* Project Type: Independent Freelance Work
 
 This project was designed and developed as a client-based freelance solution for Lourdes Mata Central School, focusing on usability, modern UI, and efficient receipt management.
 ---
