@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Receipt App — Preview</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="top-left">
+          <img src="/img/logo (1).png" alt="logo" class="logo-xsmall" />
+          <div>
+            <div class="school-name">Lourdes Mata Central school</div>
+            <div class="muted">
+              KOVILTHOTTAM, CHAVARN (PD) CBIC AFF 931047 | PHONE 0476-2683401,
+              8281044713
+            </div>
+          </div>
+        </div>
+        <div>
+          <button id="logoutBtn2" class="btn-ghost btn-outline ghost-outerline">
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="preview-wrap">
+          <!-- left: large receipt card; right: compact & actions -->
+          <div class="preview-left">
+            <div class="receipt-card" id="receiptCard">
+              <div class="rc-header">
+                <img src="/img/logo (1).png" alt="logo" class="logo-small" />
+                <div class="rc-headtext">
+                  <div class="school-name">Lourdes Mata Central school</div>
+                  <div class="muted">
+                    KOVILTHOTTAM, CHAVARN (PD) CBIC AFF 931047
+                  </div>
+                  <div class="muted">PHONE 0476-2683401, 8281044713</div>
+                </div>
+              </div>
+
+              <h3 class="centered">FEE RECEIPT</h3>
+
+              <div class="rc-row">
+                <div>
+                  <strong>Receipt No :</strong> <span id="p_receipt_no"></span>
+                </div>
+                <div class="right">
+                  <strong>Date :</strong> <span id="p_date"></span>
+                </div>
+              </div>
+
+              <div class="rc-row">
+                <div><strong>Name :</strong> <span id="p_name"></span></div>
+              </div>
+
+              <div class="rc-row">
+                <div>
+                  <strong>Admin No :</strong> <span id="p_admin_no"></span>
+                </div>
+                <div class="right">
+                  <strong>Class :</strong> <span id="p_class_div"></span>
+                </div>
+              </div>
+
+              <hr />
+
+              <table class="rc-table">
+                <thead>
+                  <tr>
+                    <th>PARTICULARS</th>
+                    <th class="right">AMOUNT (₹)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tuition Fee</td>
+                    <td class="right" id="p_tuition">0.00</td>
+                  </tr>
+                  <tr>
+                    <td>Bus Fee</td>
+                    <td class="right" id="p_bus">0.00</td>
+                  </tr>
+                  <tr>
+                    <td>CCA Fee</td>
+                    <td class="right" id="p_cca">0.00</td>
+                  </tr>
+                  <tr class="total-row">
+                    <td><strong>TOTAL</strong></td>
+                    <td class="right" id="p_total">0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p class="in-words muted small" id="p_words">(in words)</p>
+
+              <div class="rc-footer">
+                <div class="right muted">Cashier/Accountant</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-right">
+            <div class="card small">
+              <h4>Quick Actions</h4>
+              <p class="small muted">
+                Preview exact receipt below. Edit if required.
+              </p>
+
+              <div class="actions-vertical">
+                <button id="btnEdit" class="btn-ghost btn-outline">Edit</button>
+                <button id="btnPrintPage" class="btn-primary">
+                  Proceed to Print
+                </button>
+                <button id="btnSaveLocal" class="btn-outline">
+                  Save locally
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

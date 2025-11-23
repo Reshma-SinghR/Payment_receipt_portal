@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Receipt App — Create Receipt</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="top-left">
+          <img src="/img/logo (1).png" alt="logo" class="logo-xsmall" />
+          <div>
+            <div class="school-name">Lourdes Mata Central school</div>
+            <div class="muted">
+              KOVILTHOTTAM, CHAVARN (PD) CBIC AFF 931047 | PHONE 0476-2683401,
+              8281044713
+            </div>
+          </div>
+        </div>
+        <div>
+          <button id="logoutBtn" class="btn-ghost btn-outline">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Create Payment Receipt</h2>
+
+        <form id="receiptForm" class="form-grid">
+          <div>
+            <label>Receipt No</label>
+            <input
+              name="receipt_no"
+              id="receipt_no"
+              placeholder="Auto or enter"
+            />
+          </div>
+
+          <div>
+            <label>Date</label>
+            <input name="date" id="date" type="date" />
+          </div>
+
+          <div>
+            <label>Student Name</label>
+            <input name="student_name" id="student_name" required />
+          </div>
+
+          <div>
+            <label>Admission No</label>
+            <input name="admin_no" id="admin_no" required />
+          </div>
+
+          <div>
+            <label>Class & Division</label>
+            <input name="class_div" id="class_div" />
+          </div>
+
+          <div>
+            <label>Tuition Fee (₹)</label>
+            <input
+              name="tuition_fee"
+              id="tuition_fee"
+              type="number"
+              min="0"
+              step="0.01"
+            />
+          </div>
+
+          <div>
+            <label>Bus Fee (₹)</label>
+            <input
+              name="bus_fee"
+              id="bus_fee"
+              type="number"
+              min="0"
+              step="0.01"
+            />
+          </div>
+
+          <div>
+            <label>CCA Fee (₹)</label>
+            <input
+              name="cca_fee"
+              id="cca_fee"
+              type="number"
+              min="0"
+              step="0.01"
+            />
+          </div>
+
+          <div class="full">
+            <label>Notes (optional)</label>
+            <input
+              name="notes"
+              id="notes"
+              placeholder="Payment details or remarks"
+            />
+          </div>
+
+          <div class="full actions">
+            <button type="button" id="btnPreview" class="btn-primary">
+              Preview Receipt
+            </button>
+            <button type="button" id="btnClear" class="btn-ghost">Clear</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

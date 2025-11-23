@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Receipt App — Custom Print</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* ================= CUSTOM RECEIPT PRINT SIZE =================
+       Paper cut size: 16.5cm x 20.5cm
+       Receipt print size: 12cm x 16.5cm
+    */
+
+      @media print {
+        @page {
+          size: 16.5cm 20.5cm; /* Actual cut paper size */
+          margin: 0;
+        }
+
+        body {
+          margin: 0;
+          padding: 0;
+          background: #fff;
+        }
+
+        /* Receipt exact print area */
+        .receipt-print {
+          width: 12cm; /* REQUIRED WIDTH */
+          height: 16.5cm; /* REQUIRED HEIGHT */
+          margin: auto;
+          padding: 8mm;
+          box-sizing: border-box;
+          font-size: 13px;
+        }
+
+        .print-controls {
+          display: none !important;
+        }
+      }
+
+      /* ========== NORMAL SCREEN VIEW ========== */
+      body {
+        background: #f5f5f5;
+        color: #222;
+      }
+
+      .receipt-print {
+        background: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="container no-padding">
+      <!-- RECEIPT AREA -->
+      <div class="receipt-print" id="printArea">
+        <div class="rc-header">
+          <img src="/img/logo (1).png" alt="logo" class="logo-small" />
+          <div class="rc-headtext">
+            <div class="school-name">Lourdes Mata Central school</div>
+            <div class="muted">
+              KOVILTHOTTAM, CHAVARN (PD) CBIC AFF 931047 | PHONE 0476-2683401,
+              8281044713
+            </div>
+            <div class="muted">PHONE 0476-2683401, 8281044713</div>
+          </div>
+        </div>
+
+        <h2 class="centered">FEE RECEIPT</h2>
+
+        <div class="rc-row">
+          <div>
+            <strong>Receipt No :</strong> <span id="pr_receipt_no"></span>
+          </div>
+          <div class="right">
+            <strong>Date :</strong> <span id="pr_date"></span>
+          </div>
+        </div>
+
+        <div class="rc-row">
+          <div><strong>Name :</strong> <span id="pr_name"></span></div>
+        </div>
+
+        <div class="rc-row">
+          <div><strong>Admin No :</strong> <span id="pr_admin_no"></span></div>
+          <div class="right">
+            <strong>Class :</strong> <span id="pr_class_div"></span>
+          </div>
+        </div>
+
+        <hr />
+
+        <table class="rc-table">
+          <thead>
+            <tr>
+              <th>PARTICULARS</th>
+              <th class="right">AMOUNT (₹)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tuition Fee</td>
+              <td class="right" id="pr_tuition">0.00</td>
+            </tr>
+            <tr>
+              <td>Bus Fee</td>
+              <td class="right" id="pr_bus">0.00</td>
+            </tr>
+            <tr>
+              <td>CCA Fee</td>
+              <td class="right" id="pr_cca">0.00</td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>TOTAL</strong></td>
+              <td class="right" id="pr_total">0.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="in-words muted small" id="pr_words">(in words)</p>
+
+        <div
+          style="
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+          "
+        >
+          <div>
+            Received By<br />
+            <div
+              style="border-top: 1px solid #222; width: 120px; margin-top: 8px"
+            ></div>
+          </div>
+          <div>
+            Authorized Signature<br />
+            <div
+              style="border-top: 1px solid #222; width: 120px; margin-top: 8px"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTROLS -->
+      <div class="print-controls" style="margin-top: 18px; text-align: center">
+        <button onclick="window.print()" class="btn-primary">Print</button>
+        <a href="form.html" class="btn-ghost">Back</a>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        populatePrintFromStorage();
+      });
+    </script>
+  </body>
+</html>

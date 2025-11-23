@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LMCS Receipt Portal — Login</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ✅ ADD THIS STYLE BLOCK -->
+    <style>
+      .sloth {
+        text-align: center;
+        font-size: 70px;
+        margin: 10px 0 5px;
+        position: relative;
+        transition: 0.4s ease;
+      }
+
+      .sloth.cover {
+        transform: translateY(5px) scale(0.95);
+      }
+
+      .sloth::after {
+        content: "🙈";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        transition: 0.3s ease;
+      }
+
+      .sloth.cover::after {
+        transform: translateX(-50%) scale(1);
+      }
+    </style>
+  </head>
+
+  <body class="page-center">
+    <main class="card card-sm float-box">
+      <div class="brand">
+        <img src="/img/logo (1).png" alt="logo" class="logo-small" />
+        <h1 class="brand-title">School Receipt Portal</h1>
+      </div>
+
+      <!-- ✅ SLOTH FACE ADDED HERE -->
+      <div class="sloth" id="sloth">🦥</div>
+
+      <form
+        id="loginForm"
+        class="form-group"
+        onsubmit="return handleLogin(event)"
+      >
+        <div>
+          <input id="username" type="text" placeholder="Username" required />
+        </div>
+
+        <div>
+          <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Sign In</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- ✅ ADD THIS SCRIPT BELOW -->
+    <script>
+      const password = document.getElementById("password");
+      const sloth = document.getElementById("sloth");
+
+      password.addEventListener("input", () => {
+        if (password.value.length > 0) {
+          sloth.classList.add("cover");
+        } else {
+          sloth.classList.remove("cover");
+        }
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
